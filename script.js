@@ -90,7 +90,7 @@ async function sendMessage(){
     method:'POST',
     headers:{
       'Content-Type':'application/json',
-      'Authorization':'Bearer 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'
+      'Authorization':'Bearer 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'
     },
     body:JSON.stringify({
       model:'gpt-4o-mini',
@@ -130,5 +130,6 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.2 });
+
 
 cards.forEach(card => observer.observe(card));
