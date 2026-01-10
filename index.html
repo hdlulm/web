@@ -1,49 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>My Social Hub</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Social Hub</title>
 
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
-
-<!-- Font Awesome -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-
-<!-- CSS -->
-<link rel="stylesheet" href="style.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<canvas id="bg"></canvas>
+  <canvas id="bg"></canvas>
 
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
 
-<!-- LOADER -->
-<div id="loader">
-<div class="spinner"></div>
-</div>
+  <!-- HEADER -->
+<div class="container"></div>
+  <header>
+    <h1>👋 Welcome to My Social Hub</h1>
+    <p>Connect with me on all platforms</p>
+  </header>
 
-
-<!-- HEADER -->
-<header>
-<h1>👋 Welcome to My Social Hub</h1>
-<p>Connect with me on all platforms</p>
-</header>
-
-
-<!-- THEME TOGGLE -->
+  <!-- THEME TOGGLE -->
 <button id="themeToggle">🌙</button>
-
 
 <!-- PROFILE -->
 <div class="profile">
-<img src="home.png" alt="avatar" class="avatar">
-<h2 class="name">Haudil Ulum</h2>
+  <img src="home.png" alt="avatar" class="avatar">
+  <h2 class="name">Haudil Ulum</h2>
 </div>
-
 
 <!-- SOCIAL MEDIA -->
 <section>
@@ -56,29 +49,26 @@
 </div>
 </section>
 
-
-<!-- AI ASSISTANT BUTTON -->
+  <!-- AI ASSISTANT BUTTON -->
 <div id="ai-btn">🤖</div>
-
 
 <!-- AI CHAT -->
 <div id="ai-chat">
-<div class="ai-header">AI Assistant</div>
-<div class="ai-messages" id="aiMessages"></div>
-<div class="ai-input">
-<input type="text" id="aiInput" placeholder="Ask me anything...">
-<button id="aiSend">Send</button>
+  <div class="ai-header">AI Assistant</div>
+  <div class="ai-messages" id="aiMessages"></div>
+  <div class="ai-input">
+    <input type="text" id="aiInput" placeholder="Ask me anything...">
+    <button id="aiSend">Send</button>
+  </div>
 </div>
-</div>
-
 
 <!-- FOOTER -->
-<footer>
-© 2026 • My Personal Website
-</footer>
+  <footer>
+    © 2026 • My Personal Website
+  </footer>
 
-
-<!-- JS -->
-<script type="module" src="script.js"></script>
+  <!-- JS -->
+  <script src="script.js"></script>
 </body>
 </html>
+

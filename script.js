@@ -1,3 +1,4 @@
+
 // Loader
 window.addEventListener('load', () => {
   setTimeout(() => {
@@ -21,7 +22,7 @@ const pos = new Float32Array(count * 3);
 for(let i=0;i<count*3;i++) pos[i]=(Math.random()-0.5)*200;
 particles.setAttribute('position', new THREE.BufferAttribute(pos,3));
 
-const mat = new THREE.PointsMaterial({color:0x00f2fe, size:0.7});
+const mat = new THREE.PointsMaterial({color:0xff2b2b, size:0.7});
 const mesh = new THREE.Points(particles, mat);
 scene.add(mesh);
 camera.position.z = 80;
@@ -89,7 +90,7 @@ async function sendMessage(){
     method:'POST',
     headers:{
       'Content-Type':'application/json',
-      'Authorization':'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'
+      'Authorization':'Bearer YOUR_OPENAI_API_KEY'
     },
     body:JSON.stringify({
       model:'gpt-4o-mini',
