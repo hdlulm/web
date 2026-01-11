@@ -39,25 +39,32 @@ function addMessage(text, type){
   messages.scrollTop = messages.scrollHeight;
 }
 
-/* ================== AI IN BROWSER ================== */
+/* ================== AI IN BROWSER (FIXED) ================== */
 
 let generator;
 let aiReady = false;
 
 async function initAI() {
-  addMessage("🤖 AI sedang dimuat di browser...", "bot");
+  addMessage("🤖 AI sedang dimuat...", "bot");
 
-  generator = await window.transformers.pipeline(
-    "text-generation",
-    "Xenova/bert-base-uncased"
-  );
+  try {
+    generator = await window.transformers.pipeline(
+      "text-generation",
+      "Xenova/gpt2"
+    );
 
-  aiReady = true;
-  messages.lastChild.remove();
-  addMessage("✅ AI siap! Silakan tanya apa saja.", "bot");
+    aiReady = true;
+    messages.lastChild.remove();
+    addMessage("✅ AI siap! Silakan tanya apa saja.", "bot");
+
+  } catch (err) {
+    messages.lastChild.remove();
+    addMessage("⚠️ AI gagal dimuat", "bot");
+    console.error("AI INIT ERROR:", err);
+  }
 }
 
-// Panggil sekali saat halaman dibuka
+// Panggil SEKALI
 initAI();
 
 async function sendMessage(){
@@ -80,15 +87,16 @@ async function sendMessage(){
 
   try {
     const output = await generator(text, {
-      max_new_tokens: 60,
-      temperature: 0.8
+      max_new_tokens: 50,
+      temperature: 0.7,
+      do_sample: true
     });
 
     botMsg.innerText =
-      output[0]?.generated_text || "⚠️ AI tidak bisa menjawab";
+      output?.[0]?.generated_text || "⚠️ AI tidak bisa menjawab";
 
   } catch (err) {
-    botMsg.innerText = "⚠️ Terjadi error di AI browser";
+    botMsg.innerText = "⚠️ Terjadi error di AI";
     console.error(err);
   }
 }
