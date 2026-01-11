@@ -17,6 +17,28 @@ themeToggle.onclick = () => {
     : '<i class="fas fa-moon"></i>';
 };
 
+/* ================== AI CHAT ================== */
+const openChat = document.getElementById("openChat");
+const closeChat = document.getElementById("closeChat");
+const chat = document.getElementById("chat");
+const input = document.getElementById("input");
+const sendBtn = document.getElementById("send");
+const messages = document.getElementById("messages");
+
+openChat.onclick = () => {
+  chat.style.display = "flex";
+  setTimeout(() => input.focus(), 100);
+};
+closeChat.onclick = () => chat.style.display = "none";
+
+function addMessage(text, type){
+  const div = document.createElement("div");
+  div.className = `ai-msg ${type}`;
+  div.innerText = text;
+  messages.appendChild(div);
+  messages.scrollTop = messages.scrollHeight;
+}
+
 /* ================== AI IN BROWSER ================== */
 
 let generator;
